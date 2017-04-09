@@ -1,0 +1,22 @@
+{
+  "name": "ethereum-tutorial",
+  "version": "1.0.0",
+  "description": "This is a quick guide on how to get Ethereum running on your machine",
+  "main": "index.js",
+  "dependencies": {
+    "ethereumjs-testrpc": "^3.0.3",
+    "truffle": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "testrpc": "testrpc",
+    "test": "cd sample/ && truffle test",
+    "compile": "cd sample/ && truffle compile",
+    "deploy": "cd sample && truffle deploy",
+    "init": "cd sample/ && truffle init",
+    "serve": "cd sample/ && truffle serve",
+    "migrate": "cd sample/ && truffle migrate"
+  },
+  "author": "",
+  "license": "ISC"
+}
