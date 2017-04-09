@@ -1,34 +1,29 @@
-# Ethereum Tutorial
+# truffle-init-webpack
+Example webpack project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
 
-This is a quick guide on how to get Ethereum running on your machine and create a DApp (Decentralized Application)
+## Usage
 
-## Installation
+To initialize a project with this exapmple, run `truffle init webpack` inside an empty directory.
 
-### Mac OSX
+## Building and the frontend
 
-1. `brew update && brew upgrade`
-2. `brew tap ethereum/ethereum && brew install ethereum`
+1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts onto your network of choice (default "development").
+1. Then run `npm run dev` to build the app and serve it on http://localhost:8080
 
-### Windows
+## Possible upgrades
 
-1. Download binary `https://geth.ethereum.org/downloads/`
-2. Extract
-3. chdir <path to extracted binary>
-4. open geth.exe
+* Use the webpack hotloader to sense when contracts or javascript have been recompiled and rebuild the application. Contributions welcome!
 
-### Linux
+## Common Errors
 
-1. sudo apt-get install software-properties-common
-2. sudo add-apt-repository -y ppa:ethereum/ethereum
-3. sudo apt-get update
-4. sudo apt-get install ethereum
+* **Error: Can't resolve '../build/contracts/MetaCoin.json'**
 
-## Starting
+This means you haven't compiled or migrated your contracts yet. Run `truffle compile` and `truffle migrate` first.
 
-### Setup
+Full error:
 
-1. `git clone https://github.com/1337programming/ethereum-example-dapp`
-2. `cd ethereum-example-dapp/`
-3. `npm install`
-
-For testing, run `npm run testrpc` first then run `truffle` commands.
+```
+ERROR in ./app/main.js
+Module not found: Error: Can't resolve '../build/contracts/MetaCoin.json' in '/Users/tim/Documents/workspace/Consensys/test3/app'
+ @ ./app/main.js 11:16-59
+```

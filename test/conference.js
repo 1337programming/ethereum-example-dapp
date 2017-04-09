@@ -59,7 +59,7 @@ contract('Conference', function (accounts) {
     });
   });
   
-  it("Should issue a refund by owner only", function (done) {
+  it("Should issue a refund by owner only", function () {
     return Conference.deployed().then(function (instance) {
       var ticketPrice = web3.toWei(.05, 'ether');
       var initialBalance = web3.eth.getBalance(instance.address).toNumber();
